@@ -40,4 +40,16 @@
         </RelativeLayout>
     </android.support.v4.widget.SwipeRefreshLayout>
 
+    <!-- TODO: Replace the [ads:adUnitId] attribute with the proper [adUnit_id] -->
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/bannerView_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/test_adUnit_id"
+    />
+
 </RelativeLayout>

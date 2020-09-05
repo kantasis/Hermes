@@ -5,9 +5,22 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Engine[] engines_list;
+
+    public MainActivity(){
+        super();
+        engines_list = new Engine[]{
+                new AdEngine(this)
+        };
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        for (Engine engine: engines_list)
+            engine.onCreate(savedInstanceState);
+
     }
 }
