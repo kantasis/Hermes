@@ -1,6 +1,8 @@
 package com.zerofocus.hermes;
 
-import android.support.v7.app.AppCompatActivity;
+// GK: Change this for androidX compatibility
+// import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
