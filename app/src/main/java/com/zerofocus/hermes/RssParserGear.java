@@ -1,6 +1,7 @@
 package com.zerofocus.hermes;
 
 import android.net.Uri;
+import android.util.Log;
 import android.util.Xml;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -65,7 +66,8 @@ public class RssParserGear {
                                 story.setLink(Uri.parse(link_string));
                                 link_string=null;
                             }
-                        }else if ( tagname_string.equalsIgnoreCase("media:thumbnail")) {
+                        }else if ( tagname_string.equalsIgnoreCase("media:thumbnail")
+                                || tagname_string.equalsIgnoreCase("media:content")) {
                             story.setImage( Uri.parse(parser.getAttributeValue(null,"url")) );
                         }
                     break;
@@ -90,9 +92,10 @@ public class RssParserGear {
                             String content_string = tagText_string.replace("&quot;","\"");
                             Matcher imageSource_matcher = imageSource_pattern.matcher(content_string);
                             if (imageSource_matcher.find( )) {
+                                Log.w(TAG,"Caught an image in the description tag");
                                 story.setImage(Uri.parse(imageSource_matcher.group(1)));
                             }else{
-
+                                story.setDescription(content_string);
                             }
 
                             tagText_string=tagText_string.replaceAll("</?img[^>]*/?>","");

@@ -68,6 +68,7 @@ public class Story implements View.OnClickListener, Comparable<Story> {
     }
 
     public void setDescription(String string){
+        _description = string;
         _truncateDescription();
         for (String pattern: patternToBold_list)
             _description = _description.replaceAll("<b>"+pattern+"</b>",pattern);

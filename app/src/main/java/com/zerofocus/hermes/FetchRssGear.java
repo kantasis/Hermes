@@ -59,7 +59,7 @@ public class FetchRssGear extends AsyncTask<String, Integer, ArrayList<Story>> {
     protected void onPostExecute(ArrayList<Story> stories) {
         _parent.setRefreshing(false);
         _parent.updateStories(stories);
-//        manageFeed();
+        Log.i(TAG,"Got "+stories.size()+" Stories");
     }
 
     @Override

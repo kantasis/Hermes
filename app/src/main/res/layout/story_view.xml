@@ -3,45 +3,58 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/default_preview"
-    android:orientation="vertical"
+    android:background = "#e0e0d0"
+    android:orientation="horizontal"
+    android:layout_margin="2dp"
     >
 
     <ImageView
         android:id="@+id/previewImg_id"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:padding="20dp"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
         android:contentDescription="Preview of this story image"
-        android:background = "#797979"
+
         />
 
-    <TextView
-        android:id="@+id/titleText_id"
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:padding="10dp"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        />
+        android:background = "#f0f0ff"
+        android:orientation="vertical"
+        >
 
-    <TextView
-        android:id="@+id/descriptionText_id"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:visibility="visible"
-        />
+        <TextView
+            android:id="@+id/titleText_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:padding="3dp"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="Title"
+            android:textColor="#000"
+            />
 
-    <TextView
-        android:id="@+id/storySource_id"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:text="paok.gr"
-        android:gravity="end"
-        android:visibility="visible"
-        />
+        <TextView
+            android:id="@+id/descriptionText_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Description"
+            android:textColor="#000"
+            />
 
+        <TextView
+            android:id="@+id/storySource_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="1dp"
+            android:text="paok.gr"
+            android:gravity="end"
+            android:textColor="#000"
+            />
+
+    </LinearLayout>
 </LinearLayout>

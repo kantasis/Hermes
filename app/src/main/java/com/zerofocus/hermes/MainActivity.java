@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     }
 
     public void fetchFeed(){
+        _stories.clear();
         String [] _rssURL_string_list = getResources().getStringArray(R.array.rss_list);
         new FetchRssGear(this).execute(_rssURL_string_list);
     }
@@ -74,7 +75,6 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     public void updateStories(ArrayList<Story> stories){
         Log.i(TAG,"Updating stories");
 
-        _stories.clear();
         _stories.addAll(stories);
 
         if (stories == null || stories.size() == 0){
@@ -87,9 +87,9 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         _emptyListView.setVisibility(View.GONE);
         _recyclerView.setVisibility(View.VISIBLE);
 
-        Collections.sort(stories);
-        for (Story story: stories){
-            Log.i(TAG,story.getTitle());
+        Collections.sort(_stories);
+        for (Story story: _stories){
+            Log.i(TAG, story.getTitle());
         }
 
         Parcelable recyclerViewState = _recyclerView.getLayoutManager().onSaveInstanceState();

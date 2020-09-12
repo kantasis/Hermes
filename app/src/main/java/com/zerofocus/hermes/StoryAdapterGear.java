@@ -27,7 +27,6 @@ public class StoryAdapterGear extends RecyclerView.Adapter<StoryAdapterGear.Stor
 
     @Override
     public StoryAdapterGear.StoryViewHolder onCreateViewHolder(ViewGroup parent, int type) {
-        Log.i(TAG,"Creating new holder");
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
@@ -40,7 +39,6 @@ public class StoryAdapterGear extends RecyclerView.Adapter<StoryAdapterGear.Stor
 
     @Override
     public void onBindViewHolder(StoryAdapterGear.StoryViewHolder holder, int position) {
-        Log.i(TAG,"onBindViewHolder: " + position);
         final Story story = _stories.get(position);
         holder.setStory(story);
     }
@@ -80,7 +78,6 @@ public class StoryAdapterGear extends RecyclerView.Adapter<StoryAdapterGear.Stor
                 Log.w(TAG,"Got a null story");
                 return null;
             }
-            Log.w(TAG,"Holding a proper story: "+story.getTitle());
             Spanned title, description;
             if (Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N){
                 title = Html.fromHtml(story.getTitle(),Html.FROM_HTML_MODE_LEGACY);
@@ -91,7 +88,11 @@ public class StoryAdapterGear extends RecyclerView.Adapter<StoryAdapterGear.Stor
             }
 
             title_view.setText(title);
-            description_view.setText(description);
+
+            if (description.length()<title.length())
+                description_view.setVisibility(View.GONE);
+            else
+                description_view.setText(description);
 
             if (story.getImage()!=null){
                 Glide.with(_story_view)
@@ -108,5 +109,4 @@ public class StoryAdapterGear extends RecyclerView.Adapter<StoryAdapterGear.Stor
             return story;
         }
     }
-
 }
