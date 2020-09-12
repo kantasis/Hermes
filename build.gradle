@@ -9,7 +9,7 @@ buildscript {
     dependencies {
 
         // GK: Updated this from v3.1.2 to 4.0.0 in order to migrate to androidX
-        classpath 'com.android.tools.build:gradle:4.0.0'
+        classpath 'com.android.tools.build:gradle:4.0.1'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
