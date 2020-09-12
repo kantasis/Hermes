@@ -18,7 +18,7 @@ public class AdEngine extends Engine{
     private AdView _bannerAd_view;
     private InterstitialAd _interstitialAd;
 
-    AdEngine(MainActivity parent){
+    public AdEngine(MainActivity parent){
         super(parent);
     }
 

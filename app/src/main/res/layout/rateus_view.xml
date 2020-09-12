@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:background="#666"
+>
+
+    <TextView
+        android:id="@+id/rateUs_description_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="@string/rateUs_descriptionText_id"
+        android:layout_centerVertical="true"
+        android:layout_alignParentTop="true"
+        android:textAlignment="center"
+        android:padding="3dp"
+        android:layout_margin="5dp"
+    />
+
+    <Button
+        android:id="@+id/rateUs_confirm_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rateUs_description_id"
+        android:text="@string/rateUs_confirmStr_id"
+        android:background="#333"
+        android:layout_margin="5dp"
+     />
+
+    <Button
+        android:id="@+id/rateUs_later_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rateUs_confirm_id"
+        android:text="@string/rateUs_laterStr_id"
+        android:background="#333"
+        android:layout_margin="5dp"
+     />
+
+    <Button
+        android:id="@+id/rateUs_never_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rateUs_later_id"
+        android:text="@string/rateUs_neverStr_id"
+        android:background="#333"
+        android:layout_margin="5dp"
+    />
+
+</RelativeLayout>

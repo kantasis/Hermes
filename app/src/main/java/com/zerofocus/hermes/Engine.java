@@ -7,8 +7,8 @@ public class Engine {
 
     private MainActivity _parent;
 
-    Engine(MainActivity ctx) {
-        _parent = ctx;
+    Engine(MainActivity parent) {
+        _parent = parent;
     }
 
     public MainActivity getParent() {

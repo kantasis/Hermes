@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Hermes</string>
+    <string name="rateUs_descriptionText_id">Αν σας αρέσει η εφαρμοφή μας, πείτε ένα καλό λόγο για εμάς στο Play Store</string>
+    <string name="rateUs_confirmStr_id">Αφήστε μία αξιολόγηση</string>
+    <string name="rateUs_laterStr_id">Αργότερα</string>
+    <string name="rateUs_neverStr_id">Δε θέλω να αξιολογήσω</string>
+    <string name="rateus_titleStr_id">Αξιολογήστε μας</string>
 </resources>
