@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 import static com.zerofocus.hermes.MainActivity.TAG;
 
@@ -91,18 +93,18 @@ public class StoryAdapterGear extends RecyclerView.Adapter<StoryAdapterGear.Stor
             title_view.setText(title);
             description_view.setText(description);
 
-            if (story.getImage()!=null){/*
-                Glide.with(feed_view.getContext())
-                        .load(story.getImage())
-                        .into((ImageView) feed_view.findViewById(R.id.previewImg_id));
-            */}else if (story.getImageResource()!=-1) {
+            if (story.getImage()!=null){
+                Glide.with(_story_view)
+                    .load(story.getImage())
+                    .into(preview_view);
+             }else {
                 preview_view.setImageResource(story.getImageResource());
             }
 
             if (story.getLink() != null)
                 source_view.setText(story.getLink().getHost());
 
-            //_story_view.setOnClickListener(story);
+            _story_view.setOnClickListener(story);
             return story;
         }
     }

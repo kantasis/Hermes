@@ -13,6 +13,7 @@
         android:layout_height="200dp"
         android:padding="20dp"
         android:contentDescription="Preview of this story image"
+        android:background = "#797979"
         />
 
     <TextView

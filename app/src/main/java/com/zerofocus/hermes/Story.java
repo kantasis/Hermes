@@ -43,7 +43,8 @@ public class Story implements View.OnClickListener, Comparable<Story> {
     private int _imageResource=-1;
 
     public Story(){
-        // int index = new java.util.Random().nextInt(Story._previews.length);
+        int index = new java.util.Random().nextInt(Story._previews.length);
+        _imageResource = _previews[index];
     }
 
     public Date getPubDate(){
@@ -130,8 +131,6 @@ public class Story implements View.OnClickListener, Comparable<Story> {
         }
     }
 
-    // TODO: Add a ViewHolder here
-
     private static Date parseDate(String str){
         Date result=null;
         DateFormat[] formats = {
@@ -170,7 +169,6 @@ public class Story implements View.OnClickListener, Comparable<Story> {
             if (count>=DESCRIPTION_lIMIT)
                 break;
         }
-
         _description = _description.substring(0,i)+"...";
     }
 
@@ -183,5 +181,5 @@ public class Story implements View.OnClickListener, Comparable<Story> {
         result.setLink(null);
         return result;
     }
-    
+
 }

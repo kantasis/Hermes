@@ -45,4 +45,7 @@ dependencies {
     // https://developer.android.com/jetpack/androidx/releases/swiperefreshlayout
     // implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 
+    // GK: Include the [Glide] to the project
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
 }
