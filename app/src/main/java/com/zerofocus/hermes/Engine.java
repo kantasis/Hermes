@@ -15,7 +15,12 @@ public class Engine {
         return _parent;
     }
 
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {}
 
-    }
+    public void onPause() {}
+
+    public void onResume(){}
+
+    public void onDestroy() {}
+
 }

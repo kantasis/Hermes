@@ -1,6 +1,5 @@
 package com.zerofocus.hermes;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -11,7 +10,7 @@ import com.google.android.gms.ads.MobileAds;
 
 public class AdEngine extends Engine{
 
-    private AdView ad_view;
+    private AdView _ad_view;
 
     AdEngine(MainActivity parent){
         super(parent);
@@ -21,14 +20,14 @@ public class AdEngine extends Engine{
 
         // Initialize ad
         MobileAds.initialize(getParent());
-        ad_view = getParent().findViewById(R.id.bannerView_id);
+        _ad_view = getParent().findViewById(R.id.bannerView_id);
         AdRequest adRequest = new AdRequest.Builder().build();
-        ad_view.loadAd(adRequest);
+        _ad_view.loadAd(adRequest);
 
         Log.i("VVV","initializing AdEngine");
 
         // Use the internal [adListener] to handle the ad's lifecycle
-        ad_view.setAdListener(adListener);
+        _ad_view.setAdListener(adListener);
 
     }
 
@@ -74,6 +73,19 @@ public class AdEngine extends Engine{
         */
     };
 
+    public void onPause() {
+        // Pause the AdView.
+        _ad_view.pause();
+    }
 
+    public void onResume() {
+        // Resume the AdView.
+        _ad_view.resume();
+    }
+
+    public void onDestroy() {
+        // Destroy the AdView.
+        _ad_view.destroy();
+    }
 
 }

@@ -3,18 +3,24 @@ package com.zerofocus.hermes;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
+import android.text.Html;
+import android.text.Spanned;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Comparator;
 import java.util.Date;
 import java.util.Locale;
 
+import androidx.recyclerview.widget.RecyclerView;
 
-public class Story implements View.OnClickListener {
+
+public class Story implements View.OnClickListener, Comparable<Story> {
 
     public static final String TAG = MainActivity.TAG;
     public static final int DESCRIPTION_lIMIT = 300;
@@ -101,20 +107,14 @@ public class Story implements View.OnClickListener {
         return _imageResource;
     }
 
-    public class StoryComparator implements Comparator<Story> {
-
-        public StoryComparator(){
-            super();
-        }
-
-        @Override
-        public int compare(Story one, Story other){
-            if (one.getPubDate().after(other.getPubDate()))
-                return -1;
-            if (one.getPubDate().before(other.getPubDate()))
-                return 1;
-            return 0;
-        }
+    public int compareTo(Story that){
+        // One day, Hermes will sort the stories with a more elaborate scheme.
+        // Until then, sort chronologically
+        if (this.getPubDate().after(that.getPubDate()))
+            return -1;
+        if (this.getPubDate().before(that.getPubDate()))
+            return 1;
+        return 0;
     }
 
     @Override
@@ -174,4 +174,14 @@ public class Story implements View.OnClickListener {
         _description = _description.substring(0,i)+"...";
     }
 
+    public static Story getDummy(){
+        Story result = new Story();
+        result.setTitle("Dummy Title");
+        result.setDescription("Dummy Description");
+        result.setPubDate("14/2/20");
+        result.setSource(null);
+        result.setLink(null);
+        return result;
+    }
+    
 }
