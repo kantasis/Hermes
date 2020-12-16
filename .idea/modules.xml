@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Olympiakos.iml" filepath="$PROJECT_DIR$/Olympiakos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Olympiakos.iml" filepath="$PROJECT_DIR$/Olympiakos.iml" group="Olympiakos" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="Olympiakos/app" />
     </modules>
   </component>
 </project>
